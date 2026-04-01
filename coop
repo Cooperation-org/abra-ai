@@ -1,0 +1,14 @@
+#!/bin/bash
+# Claude Coop — cooperation facilitator
+# Wraps Claude Code with a different soul
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Use --system-prompt to replace the default identity
+# but don't use --bare (it disables auth)
+# --add-dir gives access to abra repo for context
+exec claude \
+  --system-prompt "$(cat "$SCRIPT_DIR/system-prompt.md")" \
+  --add-dir "$HOME/abra-repo" \
+  --allowedTools "Bash Edit Read Write Glob Grep WebFetch WebSearch Agent" \
+  "$@"
