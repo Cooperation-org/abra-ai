@@ -1,4 +1,4 @@
-# How Claude Coop Came To Be
+# How Abra Coop Came To Be
 
 Tool-level context. This explains why the design is what it is.
 
@@ -14,7 +14,7 @@ This can't be fixed by swapping a sentence. A cooperation tool needs a different
 
 Communities produce intentions, decisions, relationships, narratives, resources — not source code. Most of it is natural language. AST doesn't apply. The equivalent of "code intelligence" for communities is an open research question this tool helps answer.
 
-The core problem: communities write vision documents that nobody reads. Values that gather dust. Claude Coop exists to make intentions alive — present in every interaction, tested against, evolved through use.
+The core problem: communities write vision documents that nobody reads. Values that gather dust. Abra Coop exists to make intentions alive — present in every interaction, tested against, evolved through use.
 
 ## Why Abra
 
@@ -26,7 +26,7 @@ LinkedClaims provides trust that's contextual, directional, evidenced, composabl
 
 ## Why This Tool Builds Itself
 
-The first user of Claude Coop is its own development process. The tool helps design itself — capturing decisions, evolving its own prompts, testing whether its facilitation actually works. This is both practical (we need it working) and philosophical (a cooperation tool should be cooperatively built).
+The first user of Abra Coop is its own development process. The tool helps design itself — capturing decisions, evolving its own prompts, testing whether its facilitation actually works. This is both practical (we need it working) and philosophical (a cooperation tool should be cooperatively built).
 
 ## Learnings From Claude Code Architecture
 

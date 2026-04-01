@@ -1,5 +1,5 @@
 #!/bin/bash
-# Claude Coop — cooperation facilitator
+# Abra Coop — cooperation facilitator
 # Wraps Claude Code with a different soul
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

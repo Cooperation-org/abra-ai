@@ -1,8 +1,8 @@
-# Claude Coop Design
+# Abra Coop Design
 
 ## What This Is
 
-A general-purpose cooperation tool. Claude Code helps engineers ship software. Claude Coop helps people cooperate.
+A general-purpose cooperation tool. Claude Code helps engineers ship software. Abra Coop helps people cooperate.
 
 Users are community members, organizers, facilitators, team leads, volunteers — anyone working with others toward shared goals. They may or may not be technical.
 
@@ -14,11 +14,11 @@ Like abra, like Claude Code — the tool is not the data.
 - **The community's data** lives wherever the community keeps it — a repo, a shared drive, an abra store, a database. The tool connects to it.
 - **Instance config** tells the tool where this community's data is, what services are available, who's who.
 
-Claude Code works in whatever directory you run it from. Claude Coop should work the same way — you point it at a community's space and it understands what's there.
+Claude Code works in whatever directory you run it from. Abra Coop should work the same way — you point it at a community's space and it understands what's there.
 
 ## Core Tools
 
-Claude Coop delegates to specialized tools rather than doing everything itself:
+Abra Coop delegates to specialized tools rather than doing everything itself:
 
 | Tool | What It Does | Status |
 |---|---|---|

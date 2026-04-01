@@ -1,6 +1,6 @@
-# Claude Coop
+# Abra Coop
 
-A general-purpose cooperation tool. Like Claude Code is for engineering, Claude Coop is for communities.
+A general-purpose cooperation tool. Like Claude Code is for engineering, Abra Coop is for communities.
 
 Read these in order: ORIGIN.md (why this exists), DESIGN.md (architecture), learnings.md (what we've discovered).
 
@@ -20,7 +20,7 @@ This repo is level 1 only. No community-specific data here.
 - The tool delegates to specialized tools (abra, trustcheck, claude-code, web research). Keep that separation.
 - ORIGIN.md has context on why the design is what it is.
 
-## For Claude Coop (when building itself)
+## For Abra Coop (when building itself)
 
 - Capture what you learn in learnings.md.
 - Propose design changes in DESIGN.md — add sections, note when thinking evolved and why.

@@ -1,4 +1,4 @@
-# Claude Coop Development Learnings
+# Abra Coop Development Learnings
 
 Tool-level learnings from building coop. What we discovered about designing a cooperation tool. Survives across sessions, accumulates over time.
 
