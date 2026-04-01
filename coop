@@ -1,14 +1,52 @@
 #!/bin/bash
 # Abra Coop — cooperation facilitator
-# Wraps Claude Code with a different soul
+# Wraps Claude Code CLI with a different soul
+#
+# System prompt = core identity (always loaded)
+# Append prompts = contextual (loaded as needed)
+#
+# Usage:
+#   ./coop                          — interactive session
+#   ./coop -p "question"            — one-shot
+#   ./coop --with discipline        — load working-discipline prompt
+#   ./coop --with trust             — load trust-evaluation prompt
+#   ./coop --with capture           — load capture-protocol prompt
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Use --system-prompt to replace the default identity
-# but don't use --bare (it disables auth)
-# --add-dir gives access to abra repo for context
-exec claude \
-  --system-prompt "$(cat "$SCRIPT_DIR/system-prompt.md")" \
-  --add-dir "$HOME/abra-repo" \
-  --allowedTools "Bash Edit Read Write Glob Grep WebFetch WebSearch Agent" \
-  "$@"
+SYSTEM_PROMPT="$(cat "$SCRIPT_DIR/system-prompt.md")"
+APPEND=""
+
+# Parse --with flags to load additional prompts
+ARGS=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --with)
+      shift
+      PROMPT_FILE="$SCRIPT_DIR/prompts/$1.md"
+      if [[ -f "$PROMPT_FILE" ]]; then
+        APPEND="$APPEND
+$(cat "$PROMPT_FILE")"
+      else
+        echo "Unknown prompt: $1 (looked for $PROMPT_FILE)" >&2
+        exit 1
+      fi
+      shift
+      ;;
+    *)
+      ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+if [[ -n "$APPEND" ]]; then
+  exec claude \
+    --system-prompt "$SYSTEM_PROMPT" \
+    --append-system-prompt "$APPEND" \
+    "${ARGS[@]}"
+else
+  exec claude \
+    --system-prompt "$SYSTEM_PROMPT" \
+    "${ARGS[@]}"
+fi
